@@ -1,0 +1,61 @@
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>found </title>
+
+</head>
+
+<body>
+
+  <h1 class="result">---</div>
+
+  <script>
+
+  //Написати функцію, яка буде виводити символи (включаючи пробыли, цифри) які повторюются в строці
+
+var exsample = "pippi";
+var mass=[];
+mass = exsample.split("");
+var result = [];
+for (var i = 0; i < mass.length; i++) {
+  for (var r = i + 1; r < mass.length; r++) {
+    if (mass[i] == mass[r]) {
+      result[i] = mass[i];
+    }
+  }
+}
+function unique(result) {
+  var obj = {};
+
+  for (var i = 0; i < result.length; i++) {
+    if (result[i] == undefined) {
+      continue;
+    }
+    var str = result[i];
+    obj[str] = true;
+  }
+  return Object.keys(obj);
+}
+console.log(unique(result)); //["p", "i"]
+
+// remember("apple") => returns ["p"]
+
+// remember("apPle") => returns []          // "p" != "P"
+
+// remember("pippi") => returns ["p","i"]
+
+// remember('Pippi') => returns ["p","i"]
+      
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Capitalize</title>
+</head>
+
+<body>
+kukuk
+  <script>
+
+  // 1. Написати функцію, скорочує строку і додає три крапки 
+      function truncate(str, maxlength) {
+			return str.substr(0,maxlength) +"...";
+      }
+      console.log(truncate("рудщ ві віав",3)); //руд... 
+
+
+  // 2. Знайти кількість букв "а" в речені "Назва Львів дана місту на честь князя Лева Даниловича, сина засновника Львова Данила Галицького." використовуючи indexOf
+    var str = "Назва Львів дана місту на честь князя Лева Даниловича, сина засновника Львова Данила Галицького."; 
+    var target = "а"; 
+    var count =0;
+    var pos = 0;
+    while (true) {
+      var foundPos = str.indexOf(target, pos);
+      if (foundPos == -1) break;
+         count++;
+      pos = foundPos + 1; 
+    }
+    console.log(count); //15
+
+
+  // 3. Написати функцію, яка буде фільтрувати рядок і видиляти слова "xxxx" i "polityka"
+    var garden1 = 'Написати функцію, яка буде фільтрувати рядок і видиляти слова xxxx i polityka';
+    function rakeGarden(garden) {
+      var rakedGarden = garden.split(' ');
+      return rakedGarden.map(function(value) {
+        if (value !== 'xxxx' && value !== 'polityka') {
+          return value;
+        } 
+      }).join(' '); 
+    }
+    console.log(rakeGarden(garden1));//Написати функцію, яка буде фільтрувати рядок і видиляти слова  i  
+
+
+  // 4. Профільтрувати строку "іва 24 уц ац34434ауку" і виветси тільки цифри
+    var someDigits = 'іва 24 уц ац34434аук';
+    var onlyDigits ='';
+    function digits(someDigits) {
+      for (var i = 0; i < someDigits.length; i++) {
+        if (+someDigits.substr(i, 1)) {
+          if (i == 0) {
+            onlyDigits = someDigits.substr(i, 1);
+          } else {
+            onlyDigits += someDigits.substr(i, 1);
+          }
+        }
+      }
+      return +onlyDigits;
+    }
+    console.log(digits(someDigits)); //2434434
+
+  </script>
+
+</body>
+
+</html>

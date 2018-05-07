@@ -1,0 +1,61 @@
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Array methods</title>
+
+</head>
+
+<body>
+
+  <p>Print to console</p>
+
+  <script>
+
+    //1. Напишіть функцію, яка буде вертати масив з подвоєними значенями, використовуючи метод map()
+        var testArray = [1, 2435, 544, 4545, 4, 6, 7, 23];
+        var newArray ;
+        function double(array) {
+          return array.map(function(value) {
+            newArray = value * 2;
+                return newArray;
+            });
+        }
+        console.log(double(testArray));//[2, 4870, 1088, 9090, 8, 12, 14, 46]
+
+
+    //2. Напишіть функцію, яка буде вертати масив з непарними елементами, використовуючи метод filter().
+      Не використовував метод filter()
+        var mass = [1, -1, 2, 2, 3, 6, 4, 7, 7, 5, 5, 6, 9, 7, 6, 4, 3, 3,3,4];
+        for (var i = 0; i < mass.length; ++i) {
+          for (var r = i + 1; r < mass.length; ++r) {
+            if (mass[i] == mass[r]) {
+              console.log(" i: ",mass.splice(i,1));
+              console.log(" rr: ",mass.splice(--r, 1));
+              --i;
+              ++r;
+            }
+          }
+        }
+        console.log(mass); //[1, -1, 9, 7, 6, 4]
+
+    //3. Напишіть функцію, яка буде вертати середнє арифметичне елментів масиву, використовуючи метод reduce()
+        var arr = [1, 2, 3, 4, 5];
+        var count = 0;
+        var result = arr.reduce(function (sum, current) {
+          count++;
+          return (sum + current) ;
+        }, 0);
+        console.log(result / count); //3
+
+  </script>
+
+</body>
+
+</html>
