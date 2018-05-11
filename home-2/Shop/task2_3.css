@@ -1,0 +1,165 @@
+  					.del{
+            border-radius: 7px;
+            border-style: none;
+            background-color:  cadetblue;
+            color: azure;
+            text-align: center;
+            width: 20px;
+            margin-top: -2;
+            height:18px;
+            padding-left: 3;
+            padding-bottom: 3;
+        }
+        .addSpecificItem{
+          margin: -13 0;
+           
+        }
+        .someItemName{
+            width: 100;
+            font-size: 13;
+        }
+        .someItemPrice{
+            margin-left: -25;
+        }
+        .asInlineBlock{
+            display: inline-block;
+        }
+        .changeButtom{
+            border-radius: 3px;
+            border-style: groove;
+            display: inline-block;
+            color: blueviolet;
+           
+            margin-top: -2;		
+            height:15px;
+            font-size: 11px;
+            vertical-align: middle;
+            
+            padding-left: 7px;
+            padding-bottom: 12px;
+        }
+        .forma{
+            border-radius: 3px;
+            border-style: none;
+            background-color: darkturquoise;
+            color: azure;
+            text-align: center;
+            width: 25px;
+            margin-top: -2;
+            height:18px;
+        }
+        .totalP{
+            font-size: 15px !important;
+            font-family: monospace;
+        }
+        .lesOrMore{
+            vertical-align: top;
+            font-size: 3;
+            margin-top: 17;
+            margin-left: -15;
+        }
+        .price{
+            float: left;
+        }
+        .someItemPrice{
+            font-size: 9px !important;
+            }
+        .mainLeft{
+            float: left;
+            margin-right: 25%;
+            margin-top: 50px;
+        }
+        .absolute1{
+           position: absolute;
+        }
+        .mainRight{
+            float: right;
+            position: absolute;
+            margin-left: 74%;
+            margin-top: 50px;
+        }
+        .item {
+            border: 1px solid burlywood;
+            width: 260px;
+            height: 340px;
+            border-radius: 5px; 
+            margin: 10px;
+            float: left;  
+        }
+        .basket{
+            border: 1px solid blue;
+            width: 300px;
+            height: 370px;
+            display: inline-block;
+            border-radius: 5px; 
+            margin: 10px;
+            border-top: 25px solid blue;
+        }
+        h4{
+            margin-top: 30px;
+            margin-left: 10px;
+            font-family: calibri;
+        }
+        p{
+            margin-left: 10px;
+            margin-right: 10px;
+            font-family: calibri; 
+								   	font-size: 12px;
+        }
+        .empty{
+          margin-left: 75px;
+          margin-top: 100px;
+          border-top: 1px solid red;
+          border-bottom: 1px solid red;
+          background-color: aliceblue;
+          padding-right: 24px;
+									padding-top: 10px;
+									padding-bottom: 10px;
+        }
+        img{
+            height: 150;
+            padding-left: 50px;
+        }
+        b{
+            font-size: 14px;
+            padding-left: 30px;   
+        }
+     
+        .forItem{
+            background-color: blueviolet;
+            color: white ;
+            width: 60px;
+            height: 25;
+            border-style: none;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        .itemForm{
+            display: inline-block; 
+            float: right;
+        }
+        .clear{
+            background-color: red;
+            width: 70px;
+        }
+        .purchase{
+            background-color: blueviolet;
+        }
+        .inBasket{
+            margin-top: 310px;
+            display: inline-block;
+            border-radius: 5px;
+            color: white;
+            height: 35;
+            border-style: none;
+            float: right;
+            margin-right: 30px;
+            position: inherit;
+        }
+        .basketTitle{
+            margin-top: -20;
+            color: white;
+            font-size: 12px;
+            font-family: calibri;
+            margin-left: -10px;
+        }
