@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+  <h2>Add new bookmarks</h2>
+<!-- Форма для зберігання закладки -->
+   <div class="main">
+      <input class="title"/>
+      <input class="url"/>
+      <button onclick="addBookmark()">Save</button>
+  </div>
+<!-- Список збережених закладок -->
+  <h2>Your bookmarks</h2>
+  <h4 class="bookmarkCount">You have 1 bookmarks</h4>
+  <div class="bookmark-list">
+    <!-- Виводити як лінки, при кліки відкривати в новій вкладці -->
+    <a class="link" href="#url">Title</a>
+  </div>
+    
+    <script>
+       // var link = "https://learn.javascript.ru/array";   
+        function locSt(){
+           if(localStorage.length ==0){
+               alert('Local Storage is empty.');
+           }
+            else{  
+                var inStorage = '';
+                for (var i = 0; i < localStorage.length; i++) { 
+                    key = localStorage.key(i);
+                    inStorage += 'Key: '+key + " = " + localStorage.getItem(key)+';\n';
+                }
+                alert(inStorage);
+            }         
+          saveCount =  localStorage.getItem('countKey');
+            if(saveCount){
+               var div = document.querySelector('.bookmark-list');
+               div.innerHTML = localStorage.getItem('mykey');
+              var boCount = localStorage.getItem('boCountKey');
+             $('.bookmarkCount').text("You have " +  boCount + " bookmarks ");
+            }
+        }
+         
+       locSt(); 
+    var saveCount = false; 
+    function addBookmark() {
+        saveCount = true;
+         var mainDiv =  $('.main');
+         var userName =  $('.title');
+         var userURL =  $('.url');
+        if (validateLink(userURL.val())) { 
+              $('.bookmark-list').append('<br><a class="link" target="_blank"></a>');
+              var div = document.querySelector('.bookmark-list');
+              var a = div.lastChild;
+             
+              a.innerHTML = userName.val();
+              a.href = userURL.val(); 
+              renderListCount();                    
+             localStorage.setItem('mykey', div.innerHTML);
+             localStorage.setItem('countKey', saveCount);
+          } else {
+         
+              alert("Something went wrong");
+          }
+    }
+    
+    var  reg = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+   function validateLink(link) { 
+     var resalt = link.match(reg);
+        return resalt;
+    }
+    
+    function renderListCount() {
+        var div = document.querySelector('.bookmark-list');
+         var boCount =  div.getElementsByClassName('link');
+        $('.bookmarkCount').text("You have " +  boCount.length + " bookmarks ");
+        localStorage.setItem('boCountKey', boCount.length);
+    } 
+    </script>
+</body>
+</html>
+
+
+
+
+
