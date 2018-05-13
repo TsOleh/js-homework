@@ -3,7 +3,7 @@ function pop(event){
         counter.innerHTML++;
     }
         
-        document.onclick = function(event){ //alert('rtr'); 
+        document.onclick = function(event){ 
         var target = event.target;
         var id = target.getAttribute('data-toggle-id');
         var elem = document.getElementById(id);
@@ -72,7 +72,7 @@ function pop(event){
        $(pPlusMinus).append('<button class = "plus changeButtom">+</button>');
         var button = pPlusMinus.lastChild;
         
-					function newImpit(){	alert('rrrrr');
+	function newImpit(){	alert('rrrrr');
 					 var trt =	curentValue.value;
 						alert(trt);
 					}
@@ -152,14 +152,8 @@ function pop(event){
    function deleteOneItem(event){
        var elem = event.target.parentNode.parentNode; 
        deletFromMass(elem);
-       
-							var price = parseInt(elem.querySelector('.someItemPrice .priceB').innerHTML);
-								//productPrice -= price;
-       //var elemT =  document.querySelector('.totalP');
+	var price = parseInt(elem.querySelector('.someItemPrice .priceB').innerHTML);
        chTotalPrice(elem, productPrice, price)
-																																	
-							//	elemT.innerHTML = "Total price: " + productPrice + " $";
-       
        while(elem.lastChild){
          elem.removeChild(elem.lastChild);
        }
@@ -171,11 +165,11 @@ function pop(event){
    }
     
    function chTotalPrice(elem, totPrice, specPrice){ 
-    		var inputNumber = elem.querySelector('.forma');
+    	var inputNumber = elem.querySelector('.forma');
       var newTotal = totPrice - (inputNumber.value * specPrice);
-				productPrice = newTotal;
-							var elemT =  document.querySelector('.totalP');
-							elemT.innerHTML = "Total price: " + newTotal + " $";
+	productPrice = newTotal;
+	var elemT =  document.querySelector('.totalP');
+	elemT.innerHTML = "Total price: " + newTotal + " $";
     }
     
    function deletFromMass(elem){
