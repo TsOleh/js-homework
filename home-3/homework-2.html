@@ -1,0 +1,102 @@
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>JS Homework 2: querySelector, date, timeout</title>
+   <script src="https://cdn.jsdelivr.net/momentjs/2.13.0/moment.min.js"></script>
+</head>
+
+<body>
+
+<!-- Task 2  -->
+
+  <h1>World time</h1>
+
+  <ul>
+
+    <li data-location="london">London - <span class="time">null</span></li> <!-- час в зоне GMT+1-->
+      
+    <li data-location="kiev">Kiev - <span class="time">null</span></li><!-- час в зоне GMT+3-->
+
+    <li data-location="warshawa">Warshawa - <span class="time">null</span></li><!-- час в зоне GMT+2-->
+
+    <li data-location="los angeles">Los Angeles - <span class="time">null</span></li><!-- час в зоне GMT-7-->
+
+    <li data-location="new york">New York - <span class="time">null</span></li><!-- час в зоне GMT-4-->
+
+  </ul>
+<script>
+
+    var london = moment().utcOffset(60);
+    var kiev = moment().utcOffset(180);
+    var warshawa = moment().utcOffset(120);
+    var losAngeles = moment().utcOffset(-420);
+    var newYork = moment().utcOffset(-240);
+
+    function countDigits(n) {
+       for(var i = 0; n > 1; i++) {
+          n /= 10;
+
+       }
+       return i;
+    }
+
+ function setTate(townTate){
+    var d = townTate.date();
+    var m =townTate.month();
+    var y =townTate.year();
+    var h =townTate.hour();
+    var mi =townTate.minute();
+     ++m; //чомусь показує 4-й місяць тому ++m;
+            if(countDigits(d) == 1)
+                d = '0' + d;
+            if(countDigits(m) == 1)
+                m = '0'+ m;
+            if(countDigits(h) == 1)
+                h = '0'+ h;
+            if(countDigits(mi) == 1)
+                mi = '0'+ mi;
+    var data =  d+'.'+m+'.'+y+' - '+h+':'+mi;
+    return data;
+} 
+   var elements = document.querySelector('li[data-location="london"]');
+    var span = elements.firstElementChild;
+    span.innerHTML = setTate(london);
+    
+    elements = document.querySelector('li[data-location="kiev"]');
+    span = elements.firstElementChild;
+    span.innerHTML = setTate(kiev);
+    
+    elements = document.querySelector('li[data-location="warshawa"]');
+    span = elements.firstElementChild;
+    span.innerHTML = setTate(warshawa);
+    
+    elements = document.querySelector('li[data-location="los angeles"]');
+    span = elements.firstElementChild;
+    span.innerHTML = setTate(losAngeles);
+    
+    elements = document.querySelector('li[data-location="new york"]');
+    span = elements.firstElementChild;
+    span.innerHTML = setTate(newYork);
+ 
+</script>
+
+</body>
+
+</html>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
